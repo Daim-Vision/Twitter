@@ -24,7 +24,7 @@ module.exports.twittsController = {
   addLikes: async (req, res) => {
     try {
       await Twitt.findByIdAndUpdate(req.params.id, {
-        $push: { likes: req.params.userId },
+        $addToSet: { likes: req.params.userId },
       });
       res.json("Лайк добавлен");
     } catch (error) {
