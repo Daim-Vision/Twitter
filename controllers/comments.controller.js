@@ -17,7 +17,7 @@ module.exports.commentsController = {
   deleteAllComms: async (req, res) => {
     try {
       await Comment.deleteMany();
-      res.json("Все комментарии удалены");
+      res.json("Все комментарии удалены").populate('user toTwitt');
     } catch (error) {
       res.json(error);
     }

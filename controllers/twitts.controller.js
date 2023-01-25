@@ -14,7 +14,7 @@ module.exports.twittsController = {
 
   getAllTwitts: async (req, res) => {
     try {
-      const allTwitts = await Twitt.find();
+      const allTwitts = await Twitt;
       res.json(allTwitts);
     } catch (error) {
       res.json(error);
